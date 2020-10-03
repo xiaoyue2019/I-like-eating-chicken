@@ -30,7 +30,7 @@
 
   可以看下他的install源码
 
-  ![1](./1.png)
+  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20201004024753343.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW95dWUyMDE5,size_16,color_FFFFFF,t_70#pic_center)
 
   不支持mac os👀，狗子哥也在这里掉坑了。
 
@@ -42,13 +42,13 @@
 
   可以在generator中翻到,-h的帮助文档中也可以看到：
 
-  ![2](./2.png)
+  ![](https://img-blog.csdnimg.cn/20201004024753349.png#pic_center)
 
 ## 2. 总览
 
 官方教程中通过端口的不同来区别不同机器，从0加到了5，模拟3台机子。我们这里直接三台真机，其实这个就是对官方教程的实战。上次的[单群组双机构双节点组网模式](https://blog.csdn.net/xiaoyue2019/article/details/107500811)加上这次六节点三机构两群组组网模式，相信大家应该可以融会贯通搭建自定义的组网模式了。
 
-![](./3.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20201004024753411.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW95dWUyMDE5,size_16,color_FFFFFF,t_70#pic_center)
 
 ## 3. 使用CA生成链证书
 
@@ -59,7 +59,7 @@ ls dir_agency_ca/agencyA/
 
 下图所示为生成成功：
 
-![4](./4.png)
+[](https://img-blog.csdnimg.cn/20201004024753360.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW95dWUyMDE5,size_16,color_FFFFFF,t_70#pic_center)
 
 ## 4. 初始化所有机构
 
@@ -268,9 +268,9 @@ bash ./nodeC/start_all.sh
 
 检查共识发现如下回显，那么恭喜你完成了我24小时的工作量！
 
-![5](./5.png)
+![](https://img-blog.csdnimg.cn/20201004024753372.png#pic_center)
 
-![6](./6.png)
+![](https://img-blog.csdnimg.cn/20201004024753375.png#pic_center)
 
 **这里大部分原因是由于这个坑：**`not caused by omit empty block`
 
@@ -358,7 +358,7 @@ cd ~/generator-A/console && bash ./start.sh
 addSealer nodeid
 ```
 
-![7](./7.png)
+![](https://img-blog.csdnimg.cn/20201004024753369.png#pic_center)
 
 查看共识，发现红色加加。
 
@@ -368,11 +368,11 @@ addSealer nodeid
 
 来自上海对外经贸大学区块链与应用研究中心-肖越
 
-**website：[cnmf.net.cn](cnmf.net.cn)**
+*website：[cnmf.net.cn](cnmf.net.cn)*
 
-**csdn: [https://blog.csdn.net/xiaoyue2019](https://blog.csdn.net/xiaoyue2019)**
+*csdn: [https://blog.csdn.net/xiaoyue2019](https://blog.csdn.net/xiaoyue2019)*
 
-**github: [https://github.com/xiaoyue2019](https://github.com/xiaoyue2019)**
+*github: [https://github.com/xiaoyue2019](https://github.com/xiaoyue2019)*
 
 ---
 
