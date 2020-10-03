@@ -94,7 +94,7 @@ openssl x509 -req -days 3650 -sha256 -CA ./ca.crt -CAkey ./ca.key -CAcreateseria
 
 1. 修改node_deployment.（generator会根据其生成相关节点证书、生成节点配置文件夹）
 
-```json
+```java
 [group]
 group_id=1
 
@@ -125,7 +125,7 @@ jsonrpc_listen_port=8546
 
 2. B的node_deployment，就改一下IP，相关配置在上篇文章中有比较详细的解释。
 
-```json
+```java
 [group]
 group_id=1
 
@@ -170,7 +170,7 @@ jsonrpc_listen_port=8548
 
 6. 修改group_genesis.ini，生成创世区块并分发群组1的创世区块到机构B
 
-```json
+```java
 # ./conf/group_genesis.ini
 [group]
 group_id=1
@@ -226,7 +226,7 @@ bash ./nodeB/stop_all.sh
 
 10. 构建群组2创世区块
 
-```json
+```java
 # ./conf/group_genesis.ini
 [group]
 group_id=2
@@ -284,7 +284,7 @@ warning|2019-06-26 18:00:06.154102|[g:1][CONSENSUS][PBFT]ViewChangeWarning: not 
 
   conf文件夹下的两个配置文件中均有对groupid的配置。（千万记得要改，别只改个IP）
 
-  ```json
+  ```java
   [group]
   group_id=2
   ```
@@ -303,7 +303,7 @@ warning|2019-06-26 18:00:06.154102|[g:1][CONSENSUS][PBFT]ViewChangeWarning: not 
 
 1. 修改node_deployment
 
-```json
+```java
 [group]
 group_id=1
 
