@@ -63,7 +63,7 @@ ls dir_agency_ca/agencyA/
 
 ## 4. 初始化所有机构
 
-> **官方教程中直接使用CA生成了机构证书和私钥，实践中可能机构会自己生成私钥，打包成证书请求文件后再由CA机构认证。这里我用机构A作为例子演示下实战中生成过程**
+> **官方教程中直接使用CA生成了机构证书和私钥，实践中可能机构会自己生成私钥，打包成证书请求文件后再由CA机构认证。这里我用机构A作为例子演示下实战中生成过程。**
 
 ```bash
 #首先本地生成私钥agency.key
@@ -92,7 +92,7 @@ openssl x509 -req -days 3650 -sha256 -CA ./ca.crt -CAkey ./ca.key -CAcreateseria
 
 ### 5.1 首先是AB配置、互发节点信息，并生成创世区块
 
-1). 修改node_deployment.（generator会根据其生成相关节点证书、生成节点配置文件夹）
+1. 修改node_deployment.（generator会根据其生成相关节点证书、生成节点配置文件夹）
 
 ```java
 [group]
@@ -123,7 +123,7 @@ channel_listen_port=20201
 jsonrpc_listen_port=8546
 ```
 
-2). B的node_deployment，就改一下IP，相关配置在上篇文章中有比较详细的解释。
+2. B的node_deployment，就改一下IP，相关配置在上篇文章中有比较详细的解释。
 
 ```java
 [group]
@@ -154,9 +154,9 @@ channel_listen_port=20203
 jsonrpc_listen_port=8548
 ```
 
-3). 其他的配置也相同，本机两个节点，如果向扩容就按照上面的格式再加一个node。
+3. 其他的配置也相同，本机两个节点，如果向扩容就按照上面的格式再加一个node。
 
-4). 生成全部节点证书和P2P连接信息文件。要保证拥有node_deployment、机构证书、私钥
+4. 生成全部节点证书和P2P连接信息文件。要保证拥有node_deployment、机构证书、私钥
 
 ```bash
 
@@ -166,9 +166,9 @@ jsonrpc_listen_port=8548
 #记得是要在不同机构下跑哦！
 ```
 
-5). 互发节点连接信息，因为机构A需要配置创世区块，所以机构还B需要把节点证书文件发送给A。
+5. 互发节点连接信息，因为机构A需要配置创世区块，所以机构还B需要把节点证书文件发送给A。
 
-6). 修改group_genesis.ini，生成创世区块并分发群组1的创世区块到机构B
+6. 修改group_genesis.ini，生成创世区块并分发群组1的创世区块到机构B
 
 ```java
 # ./conf/group_genesis.ini
@@ -186,7 +186,7 @@ node3=牧子哥ip:30301
 ./generator --create_group_genesis ./group
 ```
 
-7). 生成机构节点
+7. 生成机构节点
 
 ```bash
 ./generator --build_install_package ./meta/peersB.txt ./nodeA
@@ -194,14 +194,14 @@ node3=牧子哥ip:30301
 #需要注意的是如果有多个连接文件需要合并，无格式的。
 ```
 
-8). 启动两机构
+8. 启动两机构
 
 ```bash
 bash ./nodeA/start_all.sh
 bash ./nodeB/start_all.sh
 ```
 
-9). 检查共识
+9. 检查共识
 
 ```bash
 tail -f ./node*/node*/log/log*  | grep +++
@@ -219,11 +219,11 @@ bash ./nodeB/stop_all.sh
 
 因为之前已经做好了机构C的相关配置，接下来就是纯构建群组的过程。
 
-1). AC互发节点信息(俺是真机，需要文件转移都是直接xshell-ftp拖的✌。)
+1. AC互发节点信息(俺是真机，需要文件转移都是直接xshell-ftp拖的✌。)
 
-2). A需要发证书信息给C构建创世区块
+2. A需要发证书信息给C构建创世区块
 
-3). 构建群组2创世区块并转移
+3. 构建群组2创世区块并转移
 
 ```java
 # ./conf/group_genesis.ini
@@ -241,7 +241,7 @@ node3=汤师傅ip:30305
 ./generator --create_group_genesis ./group
 ```
 
-4). 机构A添加群组
+4. 机构A添加群组
 
 ```bash
 ./generator --add_group ./meta/group.2.genesis ./nodeA
@@ -255,7 +255,7 @@ node3=汤师傅ip:30305
 ./generator --build_install_package ./meta/peersA.txt ./nodeC
 ```
 
-5）. 启动全部节点
+5. 启动全部节点
 
 ```bash
 # 重启A
